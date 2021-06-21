@@ -25,12 +25,10 @@ app.set('port', process.env.PORT || 3000);
 //app.use(express.logger());
 
 app.get('/', function(request, response) {
-  console.log('[support dash] processing get request')
-  response.send('Hello World 2!');
+  response.send("This is a server API and isn't supported in a browser!");
 });
 
 app.listen(process.env.PORT, function () {
-  console.log('***** exp listening on port: ' + process.env.PORT);
 });
 
 // The Actual Server
