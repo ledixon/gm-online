@@ -1,4 +1,3 @@
-var http = require('http');
 require('./config.js')
 const net = require('net');
 const port = config.port;
@@ -17,11 +16,22 @@ init_files.forEach(function(file) {
 })
 console.log('loaded initializers!');
 
-var app = http.createServer(function(req,res){
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ a: 1 }, null, 3));
+var http = require('http');
+var express = require("express");
+
+var app = express();
+
+app.set('port', process.env.PORT || 3000);
+//app.use(express.logger());
+
+app.get('/', function(request, response) {
+  console.log('[support dash] processing get request')
+  response.send('Hello World 2!');
 });
-app.listen(80);
+
+app.listen(process.env.PORT, function () {
+  console.log('***** exp listening on port: ' + process.env.PORT);
+});
 
 // The Actual Server
 const server = net.createServer(function(socket) {
