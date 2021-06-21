@@ -1,3 +1,4 @@
+var http = require('http');
 require('./config.js')
 const net = require('net');
 const port = config.port;
@@ -16,6 +17,11 @@ init_files.forEach(function(file) {
 })
 console.log('loaded initializers!');
 
+var app = http.createServer(function(req,res){
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ a: 1 }, null, 3));
+});
+app.listen(80);
 
 // The Actual Server
 const server = net.createServer(function(socket) {
