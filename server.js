@@ -1,13 +1,13 @@
 require('./config.js')
 const net = require('net');
-const port = config.port;
+const server_port = config.port;
+
 
 const fs = require('fs');
 
 const packet = require('./internal/packet.js'); // { build(), parse() }
 const Client = require('./internal/entities/client.js'); // class Client {...}
 const { delayReceive } = require('./internal/artificial_delay.js');
-
 
 // load some init scripts (to not put everything in this file)
 const init_files = fs.readdirSync(__dirname + '/internal/initializers', 'utf8');
@@ -18,15 +18,16 @@ console.log('loaded initializers!');
 
 const express = require("express");
 const { Console } = require('console');
+const { stringify } = require('querystring');
 const app = express();
 
 app.get('/', (request, response) => {
      response.send("This is a server API and isn't supported in a browser!");
 });
 
-const port = process.env.port || 3000;
+const port = process.env.port || 8081;
 app.listen(port, () => {
-     console.log("server started");
+     console.log("App server started on port: " + port);
 });
 
 // The Actual Server
@@ -59,8 +60,7 @@ const server = net.createServer(function(socket) {
             packet.parse(c, data); // handle the logic
         }
     });
-    // password
-//tvc7R66c!iE!Cf2a  
+
     // When a socket/connection closed
     socket.on('close', function() {
         c.onDisconnect();
@@ -68,5 +68,5 @@ const server = net.createServer(function(socket) {
     })
 });
 
-server.listen(port);
-console.log("Server running on port " + port + "!");
+server.listen(server_port);
+console.log("Server running on port " + server_port + "!");
