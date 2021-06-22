@@ -24,7 +24,7 @@ app.get('/', (request, response) => {
      response.send("This is a server API and isn't supported in a browser!");
 });
 
-app.listen("8080", () => {
+app.listen("3000", () => {
      console.log("server started");
 });
 
@@ -58,7 +58,7 @@ const server = net.createServer(function(socket) {
             packet.parse(c, data); // handle the logic
         }
     });
-
+//tvc7R66c!iE!Cf2a
     // When a socket/connection closed
     socket.on('close', function() {
         c.onDisconnect();

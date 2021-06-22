@@ -27,7 +27,7 @@ const dev_config = {
         server: 'development'
     },
     env_name: 'dev',
-    port: args.port || 1338,
+    port: args.port || 8080,
     db: args.db || 'mongodb://127.0.0.1:27017/online-game'
 }
 
