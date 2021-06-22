@@ -7,9 +7,6 @@
     "author": {
         "name": "Evoleo"
     },
-    "engines": {
-        "node": ">=14.0.0"
-    },
     "type": "commonjs",
     "dependencies": {
         "@msgpack/msgpack": "^2.3.0",
