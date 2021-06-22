@@ -16,19 +16,16 @@ init_files.forEach(function(file) {
 })
 console.log('loaded initializers!');
 
-var http = require('http');
-var express = require("express");
+const express = require("express");
+const { Console } = require('console');
+const app = express();
 
-var app = express();
-
-app.set('port', process.env.PORT || 3000);
-//app.use(express.logger());
-
-app.get('/', function(request, response) {
-  response.send("This is a server API and isn't supported in a browser!");
+app.get('/', (request, response) => {
+    response.send("This is a server API and isn't supported in a browser!");
 });
 
-app.listen(process.env.PORT, function () {
+app.listen("3000", () => {
+    console.log("server started");
 });
 
 // The Actual Server
