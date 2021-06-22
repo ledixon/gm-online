@@ -24,7 +24,8 @@ app.get('/', (request, response) => {
      response.send("This is a server API and isn't supported in a browser!");
 });
 
-app.listen("8080", () => {
+const port = process.env.port || 3000;
+app.listen(port, () => {
      console.log("server started");
 });
 
