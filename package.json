@@ -20,5 +20,8 @@
         "minimist": "^1.2.5",
         "mongoose": "^5.12.12",
         "performance-now": "^2.1.0"
+    },
+    "scripts": {
+        "start": "node server.js"
     }
 }
