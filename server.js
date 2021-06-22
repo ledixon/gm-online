@@ -58,7 +58,8 @@ const server = net.createServer(function(socket) {
             packet.parse(c, data); // handle the logic
         }
     });
-//tvc7R66c!iE!Cf2a
+    // password
+//tvc7R66c!iE!Cf2a  
     // When a socket/connection closed
     socket.on('close', function() {
         c.onDisconnect();
