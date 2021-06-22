@@ -22,6 +22,6 @@
         "performance-now": "^2.1.0"
     },
     "scripts": {
-        "start": "node server.js"
+        "start": "node main.js"
     }
 }
