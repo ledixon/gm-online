@@ -16,17 +16,17 @@ init_files.forEach(function(file) {
 })
 console.log('loaded initializers!');
 
-const express = require("express");
-const { Console } = require('console');
-const app = express();
+//const express = require("express");
+//const { Console } = require('console');
+//const app = express();
 
-app.get('/', (request, response) => {
-    response.send("This is a server API and isn't supported in a browser!");
-});
+//app.get('/', (request, response) => {
+//     response.send("This is a server API and isn't supported in a browser!");
+// });
 
-app.listen("3000", () => {
-    console.log("server started");
-});
+// app.listen("3000", () => {
+//     console.log("server started");
+//});
 
 // The Actual Server
 const server = net.createServer(function(socket) {
