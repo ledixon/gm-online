@@ -16,7 +16,6 @@
         "extend": "^3.0.2",
         "minimist": "^1.2.5",
         "mongoose": "^5.12.12",
-        "nodemon": "^2.0.7",
         "performance-now": "^2.1.0"
     }
 }
